@@ -5,6 +5,7 @@ export type Transaction = {
   category: string;
   merchantName: string;
   paymentMode: string;
+  source?: 'Manual' | 'Google Pay' | 'Paytm' | 'HDFC Bank' | 'SBI Bank' | 'Apple Pay';
   date: string;
 };
 
@@ -16,6 +17,7 @@ export const transactions: Transaction[] = [
     category: 'Food',
     merchantName: 'Swiggy',
     paymentMode: 'UPI',
+    source: 'Google Pay',
     date: new Date().toISOString()
   },
   {
@@ -25,6 +27,7 @@ export const transactions: Transaction[] = [
     category: 'Other',
     merchantName: 'Dad',
     paymentMode: 'UPI',
+    source: 'HDFC Bank',
     date: new Date(Date.now() - 86400000).toISOString()
   },
   {
@@ -34,6 +37,7 @@ export const transactions: Transaction[] = [
     category: 'Subscriptions',
     merchantName: 'Netflix',
     paymentMode: 'CARD',
+    source: 'Apple Pay',
     date: new Date(Date.now() - 2 * 86400000).toISOString()
   },
   {
@@ -43,6 +47,7 @@ export const transactions: Transaction[] = [
     category: 'Travel',
     merchantName: 'Uber',
     paymentMode: 'UPI',
+    source: 'Paytm',
     date: new Date(Date.now() - 3 * 86400000).toISOString()
   },
   {
@@ -52,6 +57,7 @@ export const transactions: Transaction[] = [
     category: 'Academics',
     merchantName: 'Campus Bookstore',
     paymentMode: 'CASH',
+    source: 'Manual',
     date: new Date(Date.now() - 4 * 86400000).toISOString()
   }
 ];
@@ -60,3 +66,4 @@ export const budgets = [
   { id: 'b1', category: 'Food', limitAmount: 3000, month: '2026-04' },
   { id: 'b2', category: 'Travel', limitAmount: 2000, month: '2026-04' },
 ];
+
