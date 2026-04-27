@@ -10,6 +10,7 @@ export async function POST(request: Request) {
   const newTransaction = {
     id: `t${Date.now()}`,
     ...data,
+    source: data.source || 'Manual',
     date: new Date().toISOString(),
   };
   // Push to mock array for the MVP session
